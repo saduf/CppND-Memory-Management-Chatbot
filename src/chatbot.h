@@ -28,13 +28,14 @@ public:
     ~ChatBot();
 
     //// STUDENT CODE
-    ////
+    ChatBot(const ChatBot &source); //copy constructor
+    ChatBot &operator=(const ChatBot &source); // copy assignment operator
+    ChatBot(ChatBot &&source); // move constructor
+    ChatBot &operator=(ChatBot &&source); // 5 : move assignment operator
+        //// EOF STUDENT CODE
 
-    ////
-    //// EOF STUDENT CODE
-
-    // getters / setters
-    void SetCurrentNode(GraphNode *node);
+        // getters / setters
+        void SetCurrentNode(GraphNode *node);
     void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
     void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
     ChatLogic* GetChatLogicHandle() { return _chatLogic; }
